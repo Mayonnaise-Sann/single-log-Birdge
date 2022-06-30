@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single-log Bridge</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+   
+    <div id="app">
+        <header>
+          
+        </header>
+        <main class="container">
+            <!-- 左栏 表格展示过桥队列 -->
+            <aside class="l-side">
+                <div class="list-con">
+                    <table class="zombies-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>方向</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in passQueue" :class="setTrClass(item)">
+                                <td >{{item.id}}</td>
+                                <td>{{item.direction}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+            <!-- 右栏 过桥动画 -->
+            <div class="r-side">
+                <div class="can-bg">
+                    <img src="./image/bgc.png" alt="" class="bgc">
+                    <div class="zombie-container" ref="zombieContainer">
+                        <img v-for="item in zombies" :src="item.src" alt="" :class="item.position">
+                    </div>
+                </div>
+                <div class="function-btn">
+                    <button id="btn" @click="createZombies()">Zombies</button>
+                    <button id="sbtn" @click="switchDirection()">Switch</button>
+                    <button id="schedule" @click="scheduling()">Schedule</button>
+                </div>
+            </div>
+        </main>
+        <footer class="foot-desc">
+            <p >CopyRight © 20软工3 朱文远（202202305270）</p>
+        </footer>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

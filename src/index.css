@@ -1,0 +1,147 @@
+
+body {
+    background-color: rgb(255, 223, 181);
+}
+.container {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.l-side {
+    display: inline-block;
+    width: 240px;
+    border-radius: 4px;
+    background-color: rgb(238, 240, 240);
+    padding: 5px;
+    background : url(./image/table.png);
+    box-shadow: 10px 10px 5px #888888;
+
+}
+.r-side {
+    display: inline-block;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgb(44, 235, 57);
+    background: url(./image/main.png) 37% 79%;
+    box-shadow: 10px 10px 5px #888888;
+
+}
+
+.list-con {
+    padding-bottom: 8px;
+    height: 586px;
+    overflow: scroll;
+
+}
+.zombies-table{
+    position: relative;
+    top: 20px;
+    width: 220px;
+    text-align: center;     
+    /* border-collapse:collapse;  
+    border-spacing:0;  */
+}
+ 
+.r-to-l {
+    background-color: rgb(149, 151, 199);
+}
+.l-to-r{
+    background-color: rgb(226, 184, 108);
+}
+.function-btn > button{
+    width: 112px;
+    height: 46px;
+    color: rgb(211, 209, 248);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 4px;
+    background: url(./image/Button.png);
+    border: none;
+    cursor: pointer;
+}
+.function-btn > button:active {
+    transform: scale(90%,90%);
+}
+.function-btn > button:hover {
+    color: rgb(246, 246, 251);
+
+}
+
+/* 动画展示 */
+ .can-bg {
+    position: relative;
+    display: inline-block;
+     margin-top: 4px;
+ }
+.bgc {
+    border: 4px solid rgb(53, 49, 74);
+    border-top: 8px  solid rgb(53, 49, 74);
+    border-radius: 6px;
+    width: 828px;
+}
+.moveToLeft {
+    animation:moveToLeft 4s linear forwards;
+}
+.moveToRight {
+    animation:moveToRight 4s linear forwards;
+}
+.right-zombie{
+    position: absolute;
+    right: 130px;
+    top: 90px;
+}
+.left-zombie{
+    position: absolute;
+    left: 108px;
+    top: 90px;
+    transform: rotateY(180deg);
+}
+ /* 桥的长度 480 */
+@keyframes moveToLeft {
+    0% {}
+    50%{
+        top:135px;
+    }
+    95% {
+        right: 605px;
+        opacity: 1;
+    }
+    99%{
+        opacity: 1;
+    }
+    100% {
+        top: 190px;
+        right: 610px;
+        display: none;
+        opacity: 0;
+    }
+}
+@keyframes moveToRight {
+    0% {}
+    50%{
+        top:140px;
+    }
+    95% {
+        left: 590px;
+        opacity: 1;
+    }
+    99%{
+        opacity: 1;
+    }
+    100% {
+        top: 200px;
+        left: 600px;
+        display: none;
+        opacity: 0;
+    }
+}
+
+/* 底注 */
+.foot-desc {
+    text-align: center;
+}
