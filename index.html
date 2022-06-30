@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>single-log Bridge</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./src/index.css">
 </head>
 <body>
    
@@ -36,7 +36,7 @@
             <!-- 右栏 过桥动画 -->
             <div class="r-side">
                 <div class="can-bg">
-                    <img src="./image/bgc.png" alt="" class="bgc">
+                    <img src="./src/image/bgc.png" alt="" class="bgc">
                     <div class="zombie-container" ref="zombieContainer">
                         <img v-for="item in zombies" :src="item.src" alt="" :class="item.position">
                     </div>
@@ -54,7 +54,7 @@
     </div>
 
 
-    <script src="./vue.js"></script>
-    <script src="./main.js"></script>
+    <script src="./src/vue.js"></script>
+    <script src="./src/main.js"></script>
 </body>
 </html>
