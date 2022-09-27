@@ -129,18 +129,28 @@ const app = new Vue({
                     this.switchDirect = false;
                     if (this.current == 'Right to Left' && this.getNext("Left to Right") != -1) {
                         this.current = "Left to Right";
-                    } 
+                    }
                     else if (this.current == "Left to Right" && this.getNext("Right to Left") != -1) {
                         console.log('swicth Right to Left')
                         this.current = "Right to Left";
                     } else this.current = this.passQueue[0].direction;
-                        this.scheduling();
+                    this.scheduling();
                      
                 } else {
                     this.current = this.passQueue[0].direction;
                     this.scheduling();
                 }
                
+
+                // 清除已经过桥的僵尸（DOM元素节点）
+                while (this.zombies.findIndex(x => x.status == "RUN") + 1) {
+                    this.zombies.splice(this.zombies.findIndex(x => x.status == "RUN"), 1);
+                }
+            } else if (this.passQueue.length == 0) {
+                // 清除已经过桥的僵尸（DOM元素节点）
+                while (this.zombies.findIndex(x => x.status == "RUN") + 1) {
+                    this.zombies.splice(this.zombies.findIndex(x => x.status == "RUN"), 1);
+                }
             }
         },
         
