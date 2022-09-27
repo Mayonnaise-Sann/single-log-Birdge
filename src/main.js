@@ -40,7 +40,7 @@ const app = new Vue({
         createZombies() {
             // 生成通行方向随机的僵尸
             for (let i = 0; i < 8; i++){
-                let src = "./src./image/" + Math.floor(Math.random() * 6) + ".gif";
+                let src = "./src/image/" + Math.floor(Math.random() * 6) + ".gif";
                 let dir = this.direction[Math.floor(Math.random() * 2)];
                 let moveDir = "let moveDir";
                 let position = "right-zombie";
@@ -96,7 +96,7 @@ const app = new Vue({
                 }
                 else
                     clearInterval(this.scheTimer);
-            }.bind(this), 1500);    
+            }.bind(this), 1100);    
         },
         // 改变方向
         switchDirection() {
