@@ -96,7 +96,7 @@ const app = new Vue({
                 }
                 else
                     clearInterval(this.scheTimer);
-            }.bind(this), 1500);    
+            }.bind(this), 1100);    
         },
         // 改变方向
         switchDirection() {
